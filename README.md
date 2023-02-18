@@ -94,3 +94,14 @@ Refer to:
 * Floating types: `float`, `double`, `long double`
 * `bool`: true(1) or false(0)
 * `char`: 1 byte, `wchar_t` for unicode are 4 bytes
+
+## 6_if_else (lessons #14-17)
+
+```c++
+if(condition){
+	// code block
+} else {
+    // alt code block
+}   
+```
+
