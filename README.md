@@ -4,7 +4,7 @@ Udemy Free Tutorial: https://www.udemy.com/course/free-learn-c-tutorial-beginner
 
 Repo: https://github.com/caveofprogramming/cplusplus-beginners
 
-## Pros/Cons
+## Pros/Cons(#1)
 
 * Challenging to learn
 
@@ -17,7 +17,7 @@ Repo: https://github.com/caveofprogramming/cplusplus-beginners
 
   * Issues instructions directly to the computer, i.e. no virtual machine: Not truly platform-independent
 
-## Hello World
+## 1_hello_world (lessons #3-4)
 
 Shopping list:
 
@@ -34,8 +34,6 @@ Shopping list:
   This is free software; see the source for copying conditions.  There is NO
   warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   ```
-
-* Install an IDE: he uses Eclipse CDT, I will use Visual Studio Code
 
 * Create a file `hello_cpp.cpp`
 
@@ -64,3 +62,35 @@ $ ./hello_cpp
 Hello World!
 ```
 
+## C++ in Visual Studio Code
+
+Install and configure an IDE: he uses Eclipse CDT, I will use Visual Studio Code
+
+Refer to: 
+
+* [GCC on Linux](https://code.visualstudio.com/docs/cpp/config-linux)
+
+- [CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux)
+
+* [C++ section](https://code.visualstudio.com/docs/cpp) of the VS Code website, with topics on:
+
+  - [Debugging](https://code.visualstudio.com/docs/cpp/cpp-debug)
+
+  - [Editing](https://code.visualstudio.com/docs/cpp/cpp-ide)
+
+  - [Settings](https://code.visualstudio.com/docs/cpp/customize-default-settings-cpp)
+
+  - [FAQ](https://code.visualstudio.com/docs/cpp/faq-cpp)
+
+## 2_outputting_text (lessons #5-6)
+
+## 3_strings (lesson #7)
+
+## 4_input (lesson #8)
+
+## 5_types (lessons #9-12)
+
+* Integer types: `int`, `short`, `long` , `unsigned`: There are limits to the values that can be stored in different types, cfr: https://www.tutorialspoint.com/c_standard_library/limits_h.htm Overflowing values don't automatically raise error messages!
+* Floating types: `float`, `double`, `long double`
+* `bool`: true(1) or false(0)
+* `char`: 1 byte, `wchar_t` for unicode are 4 bytes
