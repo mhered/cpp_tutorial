@@ -4,6 +4,8 @@ Udemy Free Tutorial: https://www.udemy.com/course/free-learn-c-tutorial-beginner
 
 Repo: https://github.com/caveofprogramming/cplusplus-beginners
 
+W3 C++ reference: https://www.w3schools.com/cpp/default.asp
+
 ## Pros/Cons(#1)
 
 * Challenging to learn
@@ -70,6 +72,33 @@ Refer to:
 
 * [GCC on Linux](https://code.visualstudio.com/docs/cpp/config-linux)
 
+Modify `tasks.json` to change the behavior of the build, e.g. to place compiled binaries in a `bin/` subfolder, i.e.:
+
+```bash
+$ g++ -g code.cpp -o ./bin/code
+```
+
+Edit `tasks.json` as follows:
+
+```json
+...
+"tasks": [
+    {
+    	...
+    	"args": [
+    	    "-g", 
+    	    "${file}", 
+    	    "-o", 
+    	    "${fileDirname}/bin/${fileBasenameNoExtension}"
+    	],
+    	...
+  
+```
+
+F5: build and debug
+
+F9: toggle breakpoint 
+
 - [CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux)
 
 * [C++ section](https://code.visualstudio.com/docs/cpp) of the VS Code website, with topics on:
@@ -105,3 +134,6 @@ if(condition){
 }   
 ```
 
+Logical operators: `&&` and, `||` or, `!` not
+
+CTRL+SHIFT + i to autoformat 

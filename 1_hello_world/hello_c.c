@@ -1,9 +1,9 @@
 // hello_c.c
 
-# include <stdio.h>
+#include <stdio.h>
 
-int main() {
+int main()
+{
     printf("Hello World, this is C!\n");
     return 0;
 }
-
