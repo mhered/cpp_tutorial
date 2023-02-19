@@ -99,6 +99,10 @@ F5: build and debug
 
 F9: toggle breakpoint 
 
+CTRL+SHIFT + i: autoformat 
+
+CTRL+SHIFT + p: command window 
+
 - [CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux)
 
 * [C++ section](https://code.visualstudio.com/docs/cpp) of the VS Code website, with topics on:
@@ -127,13 +131,28 @@ F9: toggle breakpoint
 ## 6_if_else (lessons #14-17)
 
 ```c++
-if(condition){
-	// code block
+if(condition1){
+	// code block1
+} else if(condition2){
+    // code block2
 } else {
-    // alt code block
-}   
+    // final code block
+}  
 ```
 
 Logical operators: `&&` and, `||` or, `!` not
 
-CTRL+SHIFT + i to autoformat 
+Multiple conditionals evaluate left to right but for better readability (1) use parentheses and (2) store partial conditions in `bool` variables. E.g. instead of: 
+
+```c++
+if (value2 !=8 && value1 == 10 || value1<10) {...}
+```
+
+It is better:
+
+```c++
+bool condition1 = (value2 !=8) && (value1 == 10);
+bool condition2 = value1 < 10;
+if (condition1 || condition2) {...}
+```
+
