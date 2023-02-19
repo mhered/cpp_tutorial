@@ -156,3 +156,27 @@ bool condition2 = value1 < 10;
 if (condition1 || condition2) {...}
 ```
 
+## 7_loops
+
+
+
+## 8_data_structures
+
+
+
+## 9_switch
+
+```c++
+switch(int or char){
+    case 1:
+        // code block 1
+        break;
+    ...
+    case N:
+        // code block N
+        break;      
+    default:
+        // default code
+}
+```
+
