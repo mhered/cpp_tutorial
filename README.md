@@ -121,20 +121,22 @@ CTRL+SHIFT + p: command window
 
 ## 4_input (lesson #8)
 
-## 5_types (lessons #9-12)
+## 5_variables (lessons #9-12)
 
 * Integer types: `int`, `short`, `long` , `unsigned`: There are limits to the values that can be stored in different types, cfr: https://www.tutorialspoint.com/c_standard_library/limits_h.htm Overflowing values don't automatically raise error messages!
 * Floating types: `float`, `double`, `long double`
 * `bool`: true(1) or false(0)
 * `char`: 1 byte, `wchar_t` for unicode are 4 bytes
+* `const`: constant , yields compiler error if I try to reassign it again
+* scope of variables are the brackets where they are declared
 
 ## 6_if_else (lessons #14-17)
 
 ```c++
 if(condition1){
-	// code block1
+	// code block 1
 } else if(condition2){
-    // code block2
+    // code block 2
 } else {
     // final code block
 }  
@@ -156,15 +158,45 @@ bool condition2 = value1 < 10;
 if (condition1 || condition2) {...}
 ```
 
-## 7_loops
+## 7_loops (lessons #18-21)
+
+`while(){}`: loop executes while condition is true
+
+```c++
+while(condition){
+	// code block 1
+}
+```
+
+`do{}while()`: always executes code block at least once
+
+```c++
+do{
+	// code block 1
+} while(condition)
+```
+
+`for(){}` loop:
+
+* initialization statement: executed once, before the execution of the code block. Used to init counter. Note exceptionally the counter will be available inside the code block.
+* exit condition: code block executes while this condition is true, exits when false.
+* update statement: executed (every time) after the code block.
+
+```c++
+for (initialization statement; exit condition; update statement;) {
+  // code block
+}
+```
+
+`continue`: skip to next iteration
+
+`break`: stop iteration
+
+## 8_arrays (lessons #22-25)
 
 
 
-## 8_data_structures
-
-
-
-## 9_switch
+## 9_switch (lesson #26)
 
 ```c++
 switch(int or char){
