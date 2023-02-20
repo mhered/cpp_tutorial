@@ -37,13 +37,14 @@ int main()
             else if (user_selection == 5)
             {
                 cout << "Quitting..." << endl;
+                break;
             }
             else
             {
                 cout << "Invalid selection: '" << user_selection << "'" << endl;
             }
 
-        } while (user_selection != 5);
+        } while (true);
     }
     else
     {
