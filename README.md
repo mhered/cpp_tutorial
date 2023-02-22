@@ -194,6 +194,37 @@ for (initialization statement; exit condition; update statement;) {
 
 ## 8_arrays (lessons #22-25)
 
+Notes:
+
+* if not initialized there will be garbage
+* nothing prevents you from accesing an index out of the array and this yields garbage!
+* string object stores a pointer, fixed size 8 bytes 
+* use loops to initialize and process
+* use sizeof to make size independent
+
+Example of 2D array below:
+
+```c++
+// multidimensional array, sizeof
+    string animals[2][3] = {
+        {"fox", "dog", "mouse"},
+        {"cat", "squirrel", "parrot"}};
+
+    int rows = sizeof(animals)/sizeof(animals[0]);
+    int cols = sizeof(animals[0])/sizeof(string); // sizeof(string) = 8, its a pointer!
+
+    cout << rows << " x " << cols <<endl;
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << animals[i][j] << " " << flush;
+        }
+        cout << endl;
+    };
+```
+
 
 
 ## 9_switch (lesson #26)
