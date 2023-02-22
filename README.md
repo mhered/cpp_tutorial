@@ -19,7 +19,7 @@ W3 C++ reference: https://www.w3schools.com/cpp/default.asp
 
   * Issues instructions directly to the computer, i.e. no virtual machine: Not truly platform-independent
 
-## 1_hello_world (lessons #3-4)
+## 01_hello_world (lessons #3-4)
 
 Shopping list:
 
@@ -115,13 +115,13 @@ CTRL+SHIFT + p: command window
 
   - [FAQ](https://code.visualstudio.com/docs/cpp/faq-cpp)
 
-## 2_outputting_text (lessons #5-6)
+## 02_outputting_text (lessons #5-6)
 
-## 3_strings (lesson #7)
+## 03_strings (lesson #7)
 
-## 4_input (lesson #8)
+## 04_input (lesson #8)
 
-## 5_variables (lessons #9-12)
+## 05_variables (lessons #9-12)
 
 * Integer types: `int`, `short`, `long` , `unsigned`: There are limits to the values that can be stored in different types, cfr: https://www.tutorialspoint.com/c_standard_library/limits_h.htm Overflowing values don't automatically raise error messages!
 * Floating types: `float`, `double`, `long double`
@@ -130,7 +130,7 @@ CTRL+SHIFT + p: command window
 * `const`: constant , yields compiler error if I try to reassign it again
 * scope of variables are the brackets where they are declared
 
-## 6_if_else (lessons #14-17)
+## 06_if_else (lessons #14-17)
 
 ```c++
 if(condition1){
@@ -158,7 +158,7 @@ bool condition2 = value1 < 10;
 if (condition1 || condition2) {...}
 ```
 
-## 7_loops (lessons #18-21)
+## 07_loops (lessons #18-21)
 
 `while(){}`: loop executes while condition is true
 
@@ -192,7 +192,7 @@ for (initialization statement; exit condition; update statement;) {
 
 `break`: stop iteration
 
-## 8_arrays (lessons #22-25)
+## 08_arrays (lessons #22-25)
 
 Notes:
 
@@ -225,9 +225,7 @@ Example of 2D array below:
     };
 ```
 
-
-
-## 9_switch (lesson #26)
+## 09_switch (lesson #26)
 
 ```c++
 switch(int or char){
@@ -242,4 +240,15 @@ switch(int or char){
         // default code
 }
 ```
+
+## 10_functions (lessons #27-30)
+
+Notes:
+
+*  #include precompiler instructions past the content of other files
+* #ifndef -#define - #endif structure prevents duplication
+* header files contain function prototypes so it is not needed to declare functions before calling them
+* C++ is typed: need to declare types of function arguments
+
+
 
