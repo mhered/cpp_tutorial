@@ -274,6 +274,16 @@ cfr. https://stackoverflow.com/questions/47665886/vs-code-will-not-build-c-progr
 - in constructor and setters use the same names for parameters as for the corresponding instance variables and distinguish them with the `this->` pointer.
 - in constructors it is recommended instead (and faster) to use initialization lists to initialize the variables, either in the header if short or in the .cpp if longer. It is possible to pass parameters or to initialize with fixed values. You can also initialize some parameters in the initialization list and others inside the curly brackets `{}` as needed.
 
+## 12_pointers (lesson #39)
+
+
+
+## 13_arithmetics (lesson #40)
+
+* careful with integer division
+* casting into different types
+* use brackets for more readable precedences
+
 ## What next (lesson #77)
 
 - Exceptions
