@@ -6,7 +6,7 @@ Repo: https://github.com/caveofprogramming/cplusplus-beginners
 
 W3 C++ reference: https://www.w3schools.com/cpp/default.asp
 
-## Pros/Cons(#1)
+## Pros/Cons of C++ (lesson #1)
 
 * Challenging to learn
 
@@ -271,7 +271,7 @@ cfr. https://stackoverflow.com/questions/47665886/vs-code-will-not-build-c-progr
 - destructor runs when instance is destroyed (natural scope ends in next closing curly bracket `}`)
 - overloading methods: defining methods with the same name and different parameters (cannot differ only in return type). Typical with constructors, but not exclusive
 - short methods can be implemented inline in the Class definition
-- in constructor and setters use the same names for parameters as for the corresponding instance variables and distinguish them with the `this->` pointer.
+- in constructor and setters use the same names for parameters as for the corresponding instance variables and use the `this->` pointer to distinguish them 
 - in constructors it is recommended instead (and faster) to use initialization lists to initialize the variables, either in the header if short or in the .cpp if longer. It is possible to pass parameters or to initialize with fixed values. You can also initialize some parameters in the initialization list and others inside the curly brackets `{}` as needed.
 
 ## 12_pointers (lesson #39)

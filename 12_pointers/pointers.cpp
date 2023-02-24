@@ -18,7 +18,7 @@ void manipulate_1(double value)
 
 int main()
 {
-    // definea variable
+    // define a variable
     int var = 12;
 
     // define a pointer to the memory address where the variable is stored
