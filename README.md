@@ -245,10 +245,37 @@ switch(int or char){
 
 Notes:
 
-*  #include precompiler instructions past the content of other files
-* #ifndef -#define - #endif structure prevents duplication
+*  `#include` precompiler instructions paste in the contents of other files
+* `#ifndef -#define - #endif` structure prevents duplicated inclusion
 * header files contain function prototypes so it is not needed to declare functions before calling them
 * C++ is typed: need to declare types of function arguments
+* typical structure: define functions in a `utils.cpp` file, declare their prototypes in a `utils.h` file, include the header in a `main.cpp`file to make the functions available
+* In VS code, to build all cpp files in a folder modify the following line in `tasks.json`:
 
+```json
+            "args": [
+				...
+                "-g",
+                "${fileDirname}/**.cpp",
+                ...
+```
 
+cfr. https://stackoverflow.com/questions/47665886/vs-code-will-not-build-c-programs-with-multiple-ccp-source-files
 
+## 11_classes (lessons #31-38)
+
+- creating classes is analogous to creating your own variable types
+- classes bundle methods and data representing state
+- encapsulation: variables are `private:` , public methods are defined to manipulate them, e.g. setters and getters (which are actually not recommended)
+- constructor is the place to initialize instance variables
+- destructor runs when instance is destroyed (natural scope ends in next closing curly bracket `}`)
+- overloading methods: defining methods with the same name and different parameters (cannot differ only in return type). Typical with constructors, but not exclusive
+- short methods can be implemented inline in the Class definition
+- in constructor and setters use the same names for parameters as for the corresponding instance variables and distinguish them with the `this->` pointer.
+- in constructors it is recommended instead (and faster) to use initialization lists to initialize the variables, either in the header if short or in the .cpp if longer. It is possible to pass parameters or to initialize with fixed values. You can also initialize some parameters in the initialization list and others inside the curly brackets `{}` as needed.
+
+## What next (lesson #77)
+
+- Exceptions
+- File handling
+- Standard Template Library (STL)

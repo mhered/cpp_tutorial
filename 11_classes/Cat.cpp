@@ -1,28 +1,82 @@
 // Cat.cpp
 
-#include <iostream>
+#include <iostream> // to use string, cout, cin, endl
+#include <sstream>  // to use string streams
 #include "Cat.h"
 
 using namespace std;
 
-// define a public methods
+// define constructor
+Cat::Cat()
+{
+    cout << "Initializing Cat object..." << endl;
+    // constructor is the proper place to initialize variables
+    name = "Undefined";
+    age = 0;
+    happy = true;
+}
+
+Cat::Cat(string name, int age)
+{
+    this->name = name;
+    this->age = age;
+    this->happy = true;
+}
+
+// define destructor
+Cat::~Cat()
+{
+    cout << "Cleaning up Cat object..." << endl;
+}
+
+// define public methods
 void Cat::jump()
+{
     cout << "Jumping..." << endl;
 }
 
 // define methods to manipulate private state variables
-void Cat::make_happy()
+
+// setters
+void Cat::set_happy(bool happy)
 {
-   happy=true; //private state variables are accesible from inside methods
+    this->happy = happy; // private state variables are accesible from inside methods
+}
+void Cat::set_name(string name)
+{
+    this->name = name;
+}
+void Cat::set_age(int age)
+{
+    this->age = age;
 }
 
-void Cat::make_sad()
+// getters
+string Cat::get_name()
 {
-   happy=false;
+    return name;
+}
+
+int Cat::get_age()
+{
+    return age;
+}
+
+bool Cat::get_happy()
+{
+    return happy;
+}
+
+string Cat::get_details()
+{
+    // uses IOstreams to concatenate strings and ints
+    stringstream ss;
+    ss << name << " is " << age << " y.o.";
+    return ss.str();
 }
 
 // define public methods than depends on state variables
-void Cat::speak() 
+void Cat::speak()
 {
     if (happy)
     {
@@ -33,5 +87,3 @@ void Cat::speak()
         cout << "Fffff!!" << endl;
     }
 }
-
-
