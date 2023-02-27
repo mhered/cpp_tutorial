@@ -63,11 +63,11 @@ int main()
 
     cout << *pointer << endl;
 
-    // addition
+    // increment
     pointer += 3;
     cout << *pointer << endl;
 
-    // subtraction
+    // decrement
     pointer -= 2;
     cout << *pointer << endl;
 
@@ -85,6 +85,7 @@ int main()
     // reset pointer to start of array
     pointer = &numbers[0];
 
+    // subtracting pointers yields an offset
     long size_elements = (long)(pt_last - pointer); // cast it to a long and dont use it as pointer!!
     cout << size_elements << endl;
 
