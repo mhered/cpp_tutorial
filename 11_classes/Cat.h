@@ -40,8 +40,8 @@ public: // public data and methods
     int get_age();
     bool get_happy();
     // actions
-    void speak();
-    void jump();
+    void speak() const; // good practice to declare as const methods that won't change state
+    void jump() const;
 
     string get_details();
 };

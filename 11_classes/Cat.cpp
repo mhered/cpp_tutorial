@@ -30,7 +30,7 @@ Cat::~Cat()
 }
 
 // define public methods
-void Cat::jump()
+void Cat::jump() const
 {
     cout << "Jumping..." << endl;
 }
@@ -76,7 +76,7 @@ string Cat::get_details()
 }
 
 // define public methods than depends on state variables
-void Cat::speak()
+void Cat::speak() const
 {
     if (happy)
     {
