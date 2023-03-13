@@ -15,7 +15,7 @@ Animal create_animal() // return a copy of an object
 
 Animal *create_animal2() // return a pointer to a new object
 {
-    Animal *pt_animal = new Animal();
+    Animal *pt_animal = new Animal(); // using new ensures the object will not be limited to local scope
     pt_animal->set_name("Toby");
     pt_animal->set_age(12);
     return pt_animal;
@@ -61,8 +61,32 @@ int main()
     cout << "Create an object with a function that returns a new pointer" << endl;
     Animal *pt_animal5 = create_animal2(); // this returns a pointer to an object
     pt_animal5->show_info();
-    delete pt_animal5; // remember to delete it!!
+    delete pt_animal5; // remember to delete it to deallocate the memory and avoid  leak!!
+
+    // allocating memory for an array of objects
+    int N = 26;
+    Animal *pt_animal6 = new Animal[N];
+
+    for (int i = 0; i < N; i++)
+    {
+        char c = 'a';
+        string name(1,c+i);
+        pt_animal6[i].set_name(name);
+        pt_animal6[i].set_age(i);
+
+    }
+    for (int i = 0; i < N; i++)
+    {
+        pt_animal6[i].show_info();
+    }
+
+    delete[] pt_animal6; // no need to specify the size
+
+    // allocating a chunk of memory using chars (1 char = 1 byte)
+    char *pt_mem = new char[1000];
+    delete[] pt_mem;
 
     cout << "Terminating program..." << endl;
+
     return 0;
 }

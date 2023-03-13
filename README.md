@@ -321,6 +321,15 @@ double &var2 = var1; // create an alias (instead of a copy) of var1
 * special syntax `pt_object->member` is equivalent to `(*pt_object).member`
 * typical source of bugs, e.g. not deleting object pointers causing memory leaks, deleting a pointer not created with new, deleting a `NULL` pointer, etc.
 * two types of memory: **stack** and **heap**. **Stack** is a small LIFO, keeps addresses of functions and local variables. stack overflow if you call function iteratively. With `new` you allocate memory in the **heap** which is larger.
+* we can use new and [] to allocate memory for an array of objects without instantiating them. Remember to delete all after using  them. Works also with primitive types.
+
+```c++
+Animal *pt_animal = new Animal()[10];
+...
+delete [] pt_animal; //no need to specify the size
+```
+
+
 
 ## What next (lesson #77)
 
