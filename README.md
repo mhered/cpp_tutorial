@@ -275,7 +275,7 @@ cfr. https://stackoverflow.com/questions/47665886/vs-code-will-not-build-c-progr
 - in constructors it is recommended instead (and faster) to use initialization lists to initialize the variables, either in the header if short or in the .cpp if longer. It is possible to pass parameters or to initialize with fixed values. You can also initialize some parameters in the initialization list and others inside the curly brackets `{}` as needed.
 - Good practice to declare as `const` methods that should not change state variables of the class 
 
-## 12_pointers (lessons #39, #45, #46)
+## 12_pointers_and_references (lessons #39, #45, #46)
 
 * functions that take pointers can receive &var as parameter and make persistent changes
 
@@ -292,10 +292,10 @@ manipulate(&var) // if called with &var, it makes persistent changes in var
 ```c++
 double var1 =1.0;
 double *pointer = &var1; //create a pointer to the address of an existing variable
-double &var2 = var1; // create an alias instead of a copy of var1
+double &var2 = var1; // create an alias (instead of a copy) of var1
 ```
 
-* to ways to modify a pointer: modify memory location where it points or modify what is stored in the memory location read from right to left: `const double *const pt_4` is a "constant pointer to a double that is constant"
+* two ways to modify a pointer: modify memory location where it points or modify what is stored in the memory location read from right to left: `const double *const pt_4` is a "constant pointer to a double that is constant"
 
 ## 13_arithmetics (lesson #40)
 

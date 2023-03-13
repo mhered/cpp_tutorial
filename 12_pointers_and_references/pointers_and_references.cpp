@@ -1,16 +1,22 @@
-// pointers.cpp
+// pointers_and_references.cpp
 
 #include <iostream>
 
 using namespace std;
 
-void manipulate_2(double *pt_value) // function to manipulate a value
+void manipulate_1(double value) // function to manipulate a value. Does not work
+{
+    value = value * 2;
+    cout << "Value inside function: " << value << endl;
+}
+
+void manipulate_2(double *pt_value) // function to manipulate a value with pointer
 {
     *pt_value = *pt_value * 2;
     cout << "Value inside function: " << *pt_value << endl;
 }
 
-void manipulate_1(double value)
+void manipulate_3(double &value) // function to manipulate a value with reference
 {
     value = value * 2;
     cout << "Value inside function: " << value << endl;
@@ -33,6 +39,9 @@ int main()
     cout << endl;
 
     double value = 2.5;
+
+    cout << "Passing variables directly" << endl;
+    cout << "--------------------------" << endl;
     cout << "Value before function: " << value << endl;
     // this function receives copy of the variable
     // changes do not persist
@@ -40,11 +49,37 @@ int main()
     cout << "Value after function: " << value << endl;
     cout << endl;
 
+    cout << "Passing variables by pointer" << endl;
+    cout << "----------------------------" << endl;
+
     cout << "Value before function: " << value << endl;
     // this function receives a pointer to the variable
     //  changes persist
     manipulate_2(&value); // the parameter is the address of 'value'
     cout << "Value after function: " << value << endl;
+    cout << endl;
+
+    // References: different use of &
+    cout << "Passing variables by reference" << endl;
+    cout << "------------------------------" << endl;
+
+    int val1 = 8;
+    int &val2 = val1; // this creates an alias instead of a copy of val1
+
+    cout << "Value 1: " << val1 << endl;
+    cout << "Value 2: " << val2 << endl;
+    val2 = 10;
+    cout << "Value 1: " << val1 << endl;
+    cout << "Value 2: " << val2 << endl;
+
+    // we can use this to modify values inside a function
+
+    cout << "Value before function: " << value << endl;
+    // this function receives a variable but uses a reference inside
+    //  changes persist
+    manipulate_3(value); // the parameter is 'value'
+    cout << "Value after function: " << value << endl;
+    cout << endl;
 
     // const and pointers
     double number_1 = 1.2;
@@ -86,15 +121,6 @@ int main()
     cout << *pt_4 << endl;
     // pt_4 = &number_2; // Error: cannot point the pointer elsewhere
     cout << *pt_4 << endl;
-
-    // References: different use of &
-    int val1 = 8;
-    int &val2 = val1; // this creates an alias instead of a copy of val1
-
-    val2 = 10;
-
-    cout << "Value 1: " << val1 << endl;
-    cout << "Value 2: " << val2 << endl;
 
     return 0;
 }
