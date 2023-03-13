@@ -313,6 +313,15 @@ double &var2 = var1; // create an alias (instead of a copy) of var1
 * null termination character added at the end. Need to consider when calculating length `LEN = sizeof()-1`!
 * two methods of reversing a string
 
+## 16_more_classes (lessons #47-49)
+
+* copy constructor receives a reference to a `const` object, i.e. inside we can only call `const` methods of the object being copied (we do not want to modify the original!)
+* if we don't define it explicitly C++ makes an implicit copy constructor and does not call the normal constructor
+* `new` allocates memory. Need to call `delete` explicitly, C++ will not call destructor at end of scope!
+* special syntax `pt_object->member` is equivalent to `(*pt_object).member`
+* typical source of bugs, e.g. not deleting object pointers causing memory leaks, deleting a pointer not created with new, deleting a `NULL` pointer, etc.
+* two types of memory: **stack** and **heap**. **Stack** is a small LIFO, keeps addresses of functions and local variables. stack overflow if you call function iteratively. With `new` you allocate memory in the **heap** which is larger.
+
 ## What next (lesson #77)
 
 - Exceptions
