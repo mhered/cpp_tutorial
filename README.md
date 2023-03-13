@@ -329,7 +329,11 @@ Animal *pt_animal = new Animal()[10];
 delete [] pt_animal; //no need to specify the size
 ```
 
+## 17_arrays_and_functions
 
+* C++ does not pass an array to/from functions, just a pointer to the first element and the array size information is lost. 
+* when passing an array to a function need to pass the size information, except with really ugly syntax `void show3(string (&texts)[3]) ` that also forces to know in advance the size
+* when a function returns an array you need to explicitly return the size
 
 ## What next (lesson #77)
 
