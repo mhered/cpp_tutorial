@@ -313,7 +313,7 @@ double &var2 = var1; // create an alias (instead of a copy) of var1
 * null termination character added at the end. Need to consider when calculating length `LEN = sizeof()-1`!
 * two methods of reversing a string
 
-## 16_more_classes (lessons #47-49)
+## 16_more_classes (lessons #47-50)
 
 * copy constructor receives a reference to a `const` object, i.e. inside we can only call `const` methods of the object being copied (we do not want to modify the original!)
 * if we don't define it explicitly C++ makes an implicit copy constructor and does not call the normal constructor
@@ -329,11 +329,15 @@ Animal *pt_animal = new Animal()[10];
 delete [] pt_animal; //no need to specify the size
 ```
 
-## 17_arrays_and_functions
+## 17_arrays_and_functions (lesson #51)
 
 * C++ does not pass an array to/from functions, just a pointer to the first element and the array size information is lost. 
 * when passing an array to a function need to pass the size information, except with really ugly syntax `void show3(string (&texts)[3]) ` that also forces to know in advance the size
 * when a function returns an array you need to explicitly return the size
+
+## 18_namespaces (lesson #52)
+
+* namespaces avoid conflicts between classes and global variables
 
 ## What next (lesson #77)
 
