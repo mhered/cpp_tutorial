@@ -262,17 +262,17 @@ Notes:
 
 cfr. https://stackoverflow.com/questions/47665886/vs-code-will-not-build-c-programs-with-multiple-ccp-source-files
 
-## 11_classes (lessons #31-38)
+## 11_classes (lessons #31-38, #54)
 
 - creating classes is analogous to creating your own variable types
 - classes bundle methods and data representing state
-- encapsulation: variables are `private:` , public methods are defined to manipulate them, e.g. setters and getters (which are actually not recommended)
+- **encapsulation**: make as much of the class private as possible: define as many variables as possible in `private:`  and typically put private methods in a separate `private:` section. Anything that does not have to be accessible to the end user should be private. Make end user interaction only via documented `public:` methods, e.g. setter and getter methods to manipulate private variables (which are actually not recommended)
 - constructor is the place to initialize instance variables
 - destructor runs when instance is destroyed (natural scope ends in next closing curly bracket `}`)
 - overloading methods: defining methods with the same name and different parameters (cannot differ only in return type). Typical with constructors, but not exclusive
 - short methods can be implemented inline in the Class definition
 - in constructor and setters use the same names for parameters as for the corresponding instance variables and use the `this->` pointer to distinguish them 
-- in constructors it is recommended instead (and faster) to use initialization lists to initialize the variables, either in the header if short or in the .cpp if longer. It is possible to pass parameters or to initialize with fixed values. You can also initialize some parameters in the initialization list and others inside the curly brackets `{}` as needed.
+- in constructors it is recommended instead (and faster) to use **initialization lists** to initialize the variables, either in the header if short or in the .cpp if longer. It is possible to pass parameters or to initialize with fixed values. You can also initialize some parameters in the initialization list and others inside the curly brackets `{}` as needed.
 - Good practice to declare as `const` methods that should not change state variables of the class 
 
 ## 12_pointers_and_references (lessons #39, #45, #46)
@@ -338,6 +338,13 @@ delete [] pt_animal; //no need to specify the size
 ## 18_namespaces (lesson #52)
 
 * namespaces avoid conflicts between classes and global variables
+
+## 19_inheritance (lesson #53, #55)
+
+* inheritance allows to create a child or subclasses from another superclass adding or modifying some functionality. subclasses are types of the superclass
+* constructors are not inherited, instead both constructors of the superclass and the subclass are called in sequence (superclass first)
+* from the subclass we cannot access the private data of the superclass (e.g. `Vehicle` methods cannot read or modify private data `Machine.id`, for this you need to use the methods inherited from `Machine` e.g. the constructor, or`Machine.info()` which is public)
+* to initialize a subclass we can specify which constructor from the direct superclass to run and pass it the parameters in the initialization list 
 
 ## What next (lesson #77)
 
