@@ -346,6 +346,44 @@ delete [] pt_animal; //no need to specify the size
 * from the subclass we cannot access the private data of the superclass (e.g. `Vehicle` methods cannot read or modify private data `Machine.id`, for this you need to use the methods inherited from `Machine` e.g. the constructor, or`Machine.info()` which is public)
 * to initialize a subclass we can specify which constructor from the direct superclass to run and pass it the parameters in the initialization list 
 
+## 20_twos_complement (lesson #56)
+
+max unsigned value stored in N-bit system is 2^N -1 
+
+max signed value is 2^(N-1) -1
+
+min signed value is 2^(N-1)
+
+Two's complement is the system used to store values
+
+Most significant bit used for sign (1 means negative) 
+
+we discard overflow
+
+Example with 3-bit:
+
+000: 0
+
+001: 1
+
+010: 2
+
+011: 3
+
+100: -4
+
+101: -3
+
+110: -2
+
+111: -1
+
+0010 (2) +
+
+0110 (-2) =
+
+1000 -> discard overflow -> 000 (0) OK!
+
 ## What next (lesson #77)
 
 - Exceptions
