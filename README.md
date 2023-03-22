@@ -384,6 +384,14 @@ Example with 3-bit:
 
 1000 -> discard overflow -> 000 (0) OK!
 
+## 21_static (lesson #57)
+
+* `static` makes one shared variable for all objects of the class
+* `static` methods can only access static variables (no guarantee that any objects have actually been created)
+* Classic uses: 
+  * define class constants: typically public, named in capitals and initialized in the .h file
+  * create a counter of objects created
+
 ## What next (lesson #77)
 
 - Exceptions
