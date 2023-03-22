@@ -392,6 +392,79 @@ Example with 3-bit:
   * define class constants: typically public, named in capitals and initialized in the .h file
   * create a counter of objects created
 
+## 22_particle_explosion (lessons #58-75)
+
+### intro to libraries
+
+preprocessor 
+
+compilation from source (.cpp) to object file (.o)
+
+link (in `XYZ.exe` or no suffix ) links also to libraries
+
+* static libraries: files with actual c++ code that is compiled into your program. `XYZ.lib` in windows, `libXYZ.a` in linux/Mac (although can also include calls to load dynamic libraries) 
+
+* dynamic libraries: code the program finds at run time `XYZ.dll` in windows `libXYZ.so` in linux/mac `XYZ.dylib` in mac
+
+### SDL graphics library
+
+https://www.libsdl.org/
+
+we need header files, static libraries to link with and a dynamic library the static refers to and that you need to distribute as well
+
+* Installation is one line as per instructions in http://wiki.libsdl.org/SDL2/Installation complemented with https://www.geeksforgeeks.org/sdl-library-in-c-c-with-examples/ (to add SDL_image). Note I had to remove `libsdl2-dbg` and  `libsdl2-image-dbg`
+
+```bash
+$ sudo apt-get install libsdl2-2.0-0 libsdl2-dev libsdl2-image-2.0-0 libsdl2-image-dev
+$ ls /usr/include/SDL2
+begin_code.h          SDL_log.h                    SDL_stdinc.h
+close_code.h          SDL_main.h                   SDL_surface.h
+SDL_assert.h          SDL_messagebox.h             SDL_system.h
+SDL_atomic.h          SDL_mouse.h                  SDL_syswm.h
+SDL_audio.h           SDL_mutex.h                  SDL_test_assert.h
+SDL_bits.h            SDL_name.h                   SDL_test_common.h
+SDL_blendmode.h       SDL_opengles2_gl2ext.h       SDL_test_compare.h
+SDL_clipboard.h       SDL_opengles2_gl2.h          SDL_test_crc32.h
+SDL_config.h          SDL_opengles2_gl2platform.h  SDL_test_font.h
+SDL_cpuinfo.h         SDL_opengles2.h              SDL_test_fuzzer.h
+SDL_egl.h             SDL_opengles2_khrplatform.h  SDL_test.h
+SDL_endian.h          SDL_opengles.h               SDL_test_harness.h
+SDL_error.h           SDL_opengl_glext.h           SDL_test_images.h
+SDL_events.h          SDL_opengl.h                 SDL_test_log.h
+SDL_filesystem.h      SDL_pixels.h                 SDL_test_md5.h
+SDL_gamecontroller.h  SDL_platform.h               SDL_test_memory.h
+SDL_gesture.h         SDL_power.h                  SDL_test_random.h
+SDL.h                 SDL_quit.h                   SDL_thread.h
+SDL_haptic.h          SDL_rect.h                   SDL_timer.h
+SDL_hints.h           SDL_render.h                 SDL_touch.h
+SDL_image.h           SDL_revision.h               SDL_types.h
+SDL_joystick.h        SDL_rwops.h                  SDL_version.h
+SDL_keyboard.h        SDL_scancode.h               SDL_video.h
+SDL_keycode.h         SDL_sensor.h                 SDL_vulkan.h
+SDL_loadso.h          SDL_shape.h
+$ ls -a /usr/lib/x86_64-linux-gnu/libSDL*
+/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so
+/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0
+/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.10.0
+/usr/lib/x86_64-linux-gnu/libSDL2.a
+/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so
+/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0
+/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0.2.3
+/usr/lib/x86_64-linux-gnu/libSDL2_image.a
+/usr/lib/x86_64-linux-gnu/libSDL2_image.so
+/usr/lib/x86_64-linux-gnu/libSDL2main.a
+/usr/lib/x86_64-linux-gnu/libSDL2.so
+/usr/lib/x86_64-linux-gnu/libSDL2_test.a
+```
+
+* For configuration of VS code to compile SDL2: added `,"-lSDL2", "-lSDL2_image"` to `args`  in `tasks.json` and `,"/usr/include/SDL2"` to `includePath` in `c_cpp_properties.json` as seen here: https://stackoverflow.com/questions/69019675/visual-studio-code-with-sdl-library-cant-build-undefined-reference-problem and here: https://stackoverflow.com/questions/32468761/how-can-i-link-with-gcc-and-sdl-image-library
+
+* Demo examples `sdl_demo.cpp` and `sdl_demo_ducky.cpp` adapted from here: https://www.geeksforgeeks.org/sdl-library-in-c-c-with-examples/
+
+![](./assets/images/rubber_duck_loop.gif)
+
+
+
 ## What next (lesson #77)
 
 - Exceptions
