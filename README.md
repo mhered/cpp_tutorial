@@ -394,7 +394,7 @@ Example with 3-bit:
 
 ## 22_particle_explosion (lessons #58-75)
 
-### intro to libraries
+### Intro to libraries
 
 preprocessor 
 
@@ -462,6 +462,11 @@ $ ls -a /usr/lib/x86_64-linux-gnu/libSDL*
 * Demo examples `sdl_demo.cpp` and `sdl_demo_ducky.cpp` adapted from here: https://www.geeksforgeeks.org/sdl-library-in-c-c-with-examples/
 
 ![](./assets/images/rubber_duck_loop.gif)
+
+### Wrapping SDL in a Screen class
+
+* Encapsulate setup and tear down of SDL into a class `Screen`
+* Create a background that shifts color gradually
 
 
 
