@@ -463,12 +463,17 @@ $ ls -a /usr/lib/x86_64-linux-gnu/libSDL*
 
 ![](./assets/images/rubber_duck_loop.gif)
 
-### Wrapping SDL in a Screen class
+### Wrapping SDL in a `Screen` class
 
 * Encapsulate setup and tear down of SDL into a class `Screen`
 * Create a background that shifts color gradually
 
+### Animating particles
 
+* create `Particle` and `Swarm` classes
+* 5000 particles bouncing around at random speeds and slowly shifting color
+
+![](./assets/images/particles.gif)
 
 ## What next (lesson #77)
 

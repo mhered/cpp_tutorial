@@ -5,16 +5,14 @@ using namespace std;
 
 namespace mhered
 {
-    
+
     Screen::Screen() : m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL)
     {
     }
 
-
     Screen::~Screen()
     {
     }
-
 
     bool Screen::init()
     {
@@ -76,7 +74,6 @@ namespace mhered
         return true;
     }
 
-
     bool Screen::process_events()
     {
         SDL_Event event;
@@ -91,18 +88,26 @@ namespace mhered
         return true;
     }
 
+    void Screen::clear()
+    {
+        memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+    }
 
     void Screen::update()
     {
         SDL_UpdateTexture(m_texture, NULL, m_buffer, SCREEN_WIDTH * sizeof(Uint32));
         SDL_RenderClear(m_renderer);                       // clear the render
-        SDL_RenderCopy(m_renderer, m_texture, NULL, NULL); // pass it the buffer
+        SDL_RenderCopy(m_renderer, m_texture, NULL, NULL); // pass the buffer to the render
         SDL_RenderPresent(m_renderer);                     // present it
     }
 
-
     void Screen::set_pixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
     {
+        if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
+        {
+            return; // return if (x,y) is off limits. Safe but inefficient.
+        };
+
         Uint32 rgba = 0;
         rgba += red;
         rgba <<= 8;
@@ -114,7 +119,6 @@ namespace mhered
 
         m_buffer[y * SCREEN_WIDTH + x] = rgba;
     }
-
 
     void Screen::close()
     {

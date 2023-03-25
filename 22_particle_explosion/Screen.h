@@ -24,6 +24,7 @@ namespace mhered
 
         bool init();
         void update();
+        void clear();
         void set_pixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
         bool process_events();
         void close();
