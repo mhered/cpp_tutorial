@@ -11,13 +11,17 @@ namespace mhered
         double m_x; // double for smoother calculations
         double m_y;
 
-        double m_direction;
-        double m_speed;
-
     public:
         Particle();
         ~Particle();
         void update(int delta_t);
+
+    private:
+        double m_direction;
+        double m_speed;
+
+    private:
+        void init();
     };
 }
 #endif

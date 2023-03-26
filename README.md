@@ -392,7 +392,7 @@ Example with 3-bit:
   * define class constants: typically public, named in capitals and initialized in the .h file
   * create a counter of objects created
 
-## 22_particle_explosion (lessons #58-75)
+## 22_particle_explosion (lessons #58-75,78)
 
 ### Intro to libraries
 
@@ -483,8 +483,48 @@ $ ls -a /usr/lib/x86_64-linux-gnu/libSDL*
 
 * use a timestamp to make the speed of motion independent of the computer clocking speed
 
+### Color management (lessons #66 and #73)
+
+* Use bit shifting to compose a RGB hex from 3 color components (cfr. `Screen::set_pixel()`):
+
+```c++
+// 0x99e6ff DeepSkyBlue 80%
+unsigned char red = 0x99;
+unsigned char green = 0xe6;
+unsigned char blue = 0xff;
+
+int rgb = 0;
+
+rgb += red; 	// 0x000099
+rgb <<= 8; 		// 0x009900
+rgb += green; 	// 0x0099e6
+rgb <<= 8; 		// 0x99e600
+rgb += blue; 	// 0x99e6ff
+```
+
+* Use bitwise and `&` to apply a mask and bit shifting to decompose a RGB hex into the 3 color components:
+
+```c++
+unsigned char red = (rgb & 0xFF0000) << 16; // & to apply mask then bit shifting
+unsigned char green = (rgb & 0x00FF00) << 8; // & to apply mask then bit shifting
+unsigned char blue = (rgb & 0x0000FF); // & to apply mask
+```
+
+### Blurring & tweaking
+
+![](./assets/images/final_explosion_xs.gif)
+
+### OO design considerations (lesson #78)
+
+
+
 ## What next (lesson #77)
 
 - Exceptions
 - File handling
 - Standard Template Library (STL)
+
+
+
+## 
+
