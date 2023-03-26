@@ -24,7 +24,7 @@ int main()
     Screen screen;
     screen.init();
 
-    usleep(8000000);
+    // usleep(8000000); // pause 8 secs (for easy video capture)
 
     Swarm swarm;
     // 0x99e6ffff DeepSkyBlue 80%
@@ -37,16 +37,17 @@ int main()
     // Main loop
     while (true)
     {
+        int timestamp = SDL_GetTicks();
+
         // Update particles
-        swarm.update();
+        swarm.update(timestamp);
         screen.clear();
         // Draw particles
 
         // shifting colors
-        int elapsed = SDL_GetTicks();
-        red = (1 + cos(0.001 * elapsed)) * 128;
-        green = (1 + sin(0.001 * elapsed)) * 128;
-        blue = (1 + sin(0.001 * elapsed)) * 128;
+        red = (1 + cos(0.001 * timestamp)) * 128;
+        green = (1 + sin(0.001 * timestamp)) * 128;
+        blue = (1 + sin(0.001 * timestamp)) * 128;
 
         for (int i = 0; i < Swarm::NUM_PARTICLES; i++)
         {

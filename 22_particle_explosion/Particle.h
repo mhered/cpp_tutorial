@@ -17,7 +17,7 @@ namespace mhered
     public:
         Particle();
         ~Particle();
-        void update();
+        void update(int delta_t);
     };
 }
 #endif

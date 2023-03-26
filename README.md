@@ -479,6 +479,10 @@ $ ls -a /usr/lib/x86_64-linux-gnu/libSDL*
 
 ![](./assets/images/circular_explosion.gif)
 
+### Consistent speed 
+
+* use a timestamp to make the speed of motion independent of the computer clocking speed
+
 ## What next (lesson #77)
 
 - Exceptions

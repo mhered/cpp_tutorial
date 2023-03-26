@@ -17,10 +17,11 @@ namespace mhered
         Swarm();
         ~Swarm();
         const Particle *const get_particles() { return m_pt_particles; };
-        void update();
+        void update(int timestamp);
 
     private:
         Particle *m_pt_particles; // a pointer to particles
+        int last_timestamp;
     };
 
 }
