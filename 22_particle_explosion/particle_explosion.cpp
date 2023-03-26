@@ -10,6 +10,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+
+#include <unistd.h>
+
 using namespace std;
 using namespace mhered;
 
@@ -20,6 +23,8 @@ int main()
 
     Screen screen;
     screen.init();
+
+    usleep(8000000);
 
     Swarm swarm;
     // 0x99e6ffff DeepSkyBlue 80%
@@ -46,7 +51,7 @@ int main()
         for (int i = 0; i < Swarm::NUM_PARTICLES; i++)
         {
             int x = (pt_particles[i].m_x + 1) * Screen::SCREEN_WIDTH / 2;
-            int y = (pt_particles[i].m_y + 1) * Screen::SCREEN_HEIGHT / 2;
+            int y = Screen::SCREEN_HEIGHT / 2 + pt_particles[i].m_y * Screen::SCREEN_WIDTH / 2;
 
             screen.set_pixel(x, y, red, green, blue);
         }

@@ -11,8 +11,8 @@ namespace mhered
         double m_x; // double for smoother calculations
         double m_y;
 
-        double m_x_speed;
-        double m_y_speed;
+        double m_direction;
+        double m_speed;
 
     public:
         Particle();

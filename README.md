@@ -475,6 +475,10 @@ $ ls -a /usr/lib/x86_64-linux-gnu/libSDL*
 
 ![](./assets/images/particles.gif)
 
+### Circular explosion
+
+![](./assets/images/circular_explosion.gif)
+
 ## What next (lesson #77)
 
 - Exceptions
