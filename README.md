@@ -516,15 +516,22 @@ unsigned char blue = (rgb & 0x0000FF); // & to apply mask
 
 ### OO design considerations (lesson #78)
 
+* not a fan of upfront design, prefers iterative design: prototype then refactor
+* try to encapsulate code in reusable, self-contained classes
 
+1. write a demo SDL program following the documentation 
+2. encapsulate it in a `Screen` class. Very reusable code to setup and tear down
+3. Event handling was put in the method`Screen::process_events()` because it was very simple, but could have been potentially a separate class
+4. particle entities were clear candidates to create its own`Particle` class
+5. the code to deal with the big group of particles in `Swarm` class: create, delete, visit all particles to update them. Nothing SDL specific, so it is also reusable.
+6. `Swarm` and `Screen` are independent from each other. `Swarm::get_particles()` returns an array of particles and `Screen::set_pixel()` accesses individual pixels. We have a lot of code in the `particle_explosion.cpp`, we could imagine a class that knows about `Swarm` and `Screen` and connects them, wouldn't be very reusable.
+7. `Screen::box_blur()` could also have been a separate class.
 
 ## What next (lesson #77)
 
 - Exceptions
 - File handling
 - Standard Template Library (STL)
-
-
 
 ## 23_prefix_postfix  (lesson #79)
 
@@ -539,11 +546,11 @@ int value1 = 8;
     cout << "Value3 is: " << value3 << endl;
 ```
 
+## 24_polymorfism (lesson #80)
 
-
-## polymorfism (lesson #80)
-
-
-
-## static_libraries (lesson #81)
+* you can always use a derived class where a superclass is expected
+* use keyword `virtual` when you anticipate to create subclasses with overridden methods  -> when you override methods c++ creates a "v table"  to call the appropriate method depending on the subclass created
+* only needed in the base class, but good practice to add virtual in all intermediate subclasses
+* usually destructors should always be `virtual` to ensure the proper memory cleanup.
+* useful e.g. to make an array of objects of different subclasses call a base method and each object will run their overridden version of the method 
 
