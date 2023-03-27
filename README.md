@@ -554,3 +554,55 @@ int value1 = 8;
 * usually destructors should always be `virtual` to ensure the proper memory cleanup.
 * useful e.g. to make an array of objects of different subclasses call a base method and each object will run their overridden version of the method 
 
+## 25_static_libraries (lesson #81)
+
+Libraries allow reusing classes or code. Two types: 
+
+* dynamic libraries (`.dll`, `.so `) are shared among programs and loaded at run time. Live in the same folder as the main or in a special folder in the system.
+* static libraries: built into your executable.
+
+Creating libraries with `gcc`: https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/GCC/create-libraries/index
+
+Recommendations:
+
+* use `namespace` to avoid conflicts
+* avoid unnecessary includes in the `.h` file
+* avoid general `using namespace std;` statements in the `.h` file to avoid conflicts 
+
+Compile with `-c` to create objects instead of executables, then create a static library with the `ar`  tool ( `r` means to insert with replacement, `c` means to create a new archive, and `s` means to write an index):
+
+```bash
+$ gcc -c my_library1.cpp -o my_library1.o
+$ gcc -c my_library2.cpp -o my_library2.o
+$ ar rcs libmy_library.a my_library1.o my_library2.o
+```
+
+To compile the program into a standalone executable `output` (Note: with `gcc` it does not find `iostream`):
+
+```bash
+$ g++ main.o -Lpath-to-libs -lmy_library -o output
+```
+
+  The `-L` flag indicates (a non standard) directory where the libraries can be found. 
+
+  The `-l` flag indicates the name of the library. Note, that it assumes the library to start with `lib` and end with `.a` (so `lib` and `.a` must not be specified) 
+
+In our case:
+
+```bash
+$ cd my_library
+$ gcc -c TestClass.cpp -o TestClass.o
+$ gcc -c testfunctions.cpp -o testfunctions.o
+$ ar rcs libteststaticlibrary.a TestClass.o testfunctions.o
+$ cp libteststaticlibrary.a TestClass.h testfunctions.h ../lib/
+$ cd ..
+$ g++ program_using_library.cpp -Llib -lteststaticlibrary -o bin/program_using_library
+$ ./bin/program_using_library
+Message from test function
+Message from test class
+```
+
+To do
+
+- [ ] compiling static libraries with vs code
+- [ ] using makefile with vs code
